@@ -55,8 +55,6 @@ In addition, it is possible to inform the location that the snackbar will appear
 
 Based on the new Gmail layout, the option to close the snackbar was made available. To the close icon be displayed, the `"close"` key must be set to `true` (the default is `false`).
 
-![snackbars](https://raw.githubusercontent.com/zerodois/vue-snackbar/master/docs/img/close-icon.png "Snackbar with close button")
-
 The following is an example of a configuration object. If the `"methods"` key is undefined, the available methods are ` show`, `success` and` danger`, as previously stated.
 
 
@@ -81,59 +79,3 @@ The following is an example of a configuration object. If the `"methods"` key is
   ]
 }
 ```
-
-## Demo
-
-The following is what is needed to display snackbars for success, error, and default messages, in addition to a custom created by the user. It is noteworthy that only one snackbar is displayed at a time, as is the [snackbar directive](https://material.io/design/components/snackbars.html) created by Google:
-
-[online demo](https://jsfiddle.net/zerodois/a8fp2n6j)
-
-In plugin installation:
-```javascript
-import Vue from 'vue'
-import VueTwackbar from 'vue-twack' 
-
-Vue.use(VueTwackbar, {
-  methods: {
-    name: 'myMethod',
-    color: 'hotpink'
-  }
-})
-```
-
-```javascript
-export default {
-  methods: {
-    ok () {
-      this.$twack.success({
-        text: 'Conversa arquivada',
-        button: 'desfazer',
-        action: this.clickAction
-      })
-    },
-    notOk () {
-      this.$twack.danger({
-        text: 'Erro ao salvar fotos',
-        button: 'refazer',
-        action: this.clickAction
-      })
-    },
-    potato () {
-      this.$twack.show({
-        text: 'Usuário adicionado',
-        button: 'desfazer',
-        action: this.clickAction
-      })
-    },
-    creamCheese () {
-      this.$twack.myMethod({
-        text: 'Esse site utiliza cookies bauducco',
-        button: 'Entendi'
-      })
-    }
-  }
-}
-```
-
-Snackbars generated success, error, standard and customized, successively:
-![snackbars](https://raw.githubusercontent.com/zerodois/vue-snackbar/master/docs/img/defaults.png)
