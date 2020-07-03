@@ -30,5 +30,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     // do not allow console.logs etc...
     'no-console': process.env.NODE_ENV === 'production' ? 1 : 0,
+
+    "no-unused-vars": ["error", { "vars": "local", "args": "none" }]
   }
 };

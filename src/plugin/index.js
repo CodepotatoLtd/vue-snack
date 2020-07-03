@@ -19,7 +19,7 @@ const methods = {
 const sleep = time => new Promise((resolve, reject) => setTimeout(_ => resolve(), time))
 
 const create = parent => {
-  document.addEventListener('DOMContentLoaded', event => { 
+  document.addEventListener('DOMContentLoaded', event => {
     let div = document.createElement('div')
     div.id = 'twackbar-' + Date.now()
     document.body.appendChild(div)
@@ -50,7 +50,7 @@ const actions = async (params, theme) => {
     closing = false
   }
   if (typeof options === 'string') {
-    options = { text: options }
+    options = {text: options}
   }
   let fn = options.action
   options.action = async () => {
@@ -62,13 +62,12 @@ const actions = async (params, theme) => {
   }
 
   Object.assign(config.config, Default[theme])
-  Object.assign(component, Object.assign({}, options, { theme }))
+  Object.assign(component, Object.assign({}, options, {theme}))
   component.active = true
   timeout = setTimeout(close, Default.time)
 }
 
 const $twack = (opt) => {
-  let vm = this
   let news = {}
   let themes = {}
   opt.methods = opt.methods || []
@@ -88,7 +87,7 @@ const $twack = (opt) => {
 }
 
 const plugin = {
-  install (Vue, options = {}) {
+  install(Vue, options = {}) {
     Constructor = Vue.extend(Twack)
     create()
     Object.assign(Default, options)
