@@ -7,7 +7,6 @@ import eslint from 'rollup-plugin-eslint'
 import uglify from 'rollup-plugin-uglify'
 import sass from 'rollup-plugin-sass';
 import replace from 'rollup-plugin-replace'
-import copy from 'rollup-copy-plugin'
 import filesize from 'rollup-plugin-filesize'
 import postcss from 'postcss'
 import csso from 'postcss-csso';

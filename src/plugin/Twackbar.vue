@@ -1,8 +1,6 @@
 <template>
     <transition name="snack">
-        <div>
             <template v-if="button">
-
                 <div v-if="active"
                      :style="styles"
                      :class="config.position"
@@ -46,7 +44,6 @@
                     </svg>
                 </div>
             </template>
-        </div>
     </transition>
 </template>
 

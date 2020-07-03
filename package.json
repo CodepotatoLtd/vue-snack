@@ -1,6 +1,6 @@
 {
   "name": "vue-twack",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Tailwind Snackbar plugin for Vue.JS",
   "author": "Codepotato Limited <opensource@codepotato.co.uk>",
   "license": "MIT",
