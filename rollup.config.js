@@ -15,8 +15,8 @@ import { minify } from 'uglify-es'
 import autoprefixer from 'autoprefixer'
 
 const options = {
-  distName: 'vue-snack',
-  umdName: 'VueSnackPlugin',
+  distName: 'vue-twack',
+  umdName: 'VueTwackPlugin',
   transpiler: 'babel',
   styles: 'extract',
   external: ['vue']
@@ -59,10 +59,6 @@ const config = {
   },
   external: options.external,
   plugins: [
-    copy({
-      'src/styles/KFOlCnqEu92Fr1MmEU9fBBc4.woff2': 'dist/KFOlCnqEu92Fr1MmEU9fBBc4.woff2',
-      'src/styles/KFOmCnqEu92Fr1Mu4mxK.woff2': 'dist/KFOmCnqEu92Fr1Mu4mxK.woff2'
-    }),
     replace({
       'process.env.NODE_ENV': JSON.stringify( process.env.NODE_ENV )
     }),

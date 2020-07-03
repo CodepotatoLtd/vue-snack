@@ -1,7 +1,7 @@
 //
 // vue PlugIn
 //
-import Snack from './Snackbar.vue'
+import Twack from './Twackbar.vue'
 import Default from './defaults'
 
 let Constructor
@@ -21,7 +21,7 @@ const sleep = time => new Promise((resolve, reject) => setTimeout(_ => resolve()
 const create = parent => {
   document.addEventListener('DOMContentLoaded', event => { 
     let div = document.createElement('div')
-    div.id = 'snackbar-' + Date.now()
+    div.id = 'twackbar-' + Date.now()
     document.body.appendChild(div)
     config.config = Default
     component = new Constructor({
@@ -67,7 +67,7 @@ const actions = async (params, theme) => {
   timeout = setTimeout(close, Default.time)
 }
 
-const $snack = (opt) => {
+const $twack = (opt) => {
   let vm = this
   let news = {}
   let themes = {}
@@ -89,10 +89,10 @@ const $snack = (opt) => {
 
 const plugin = {
   install (Vue, options = {}) {
-    Constructor = Vue.extend(Snack)
+    Constructor = Vue.extend(Twack)
     create()
     Object.assign(Default, options)
-    Vue.prototype.$snack = $snack(options)
+    Vue.prototype.$twack = $twack(options)
   }
 }
 

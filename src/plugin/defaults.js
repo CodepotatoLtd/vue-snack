@@ -1,15 +1,15 @@
 export default {
   default: {
-    primary: '#2C89F1'
+    primary: '#4299E1'
   },
   success: {
-    primary: '#00DEB2'
+    primary: '#68D391'
   },
   danger: {
-    primary: '#FF0057',
+    primary: '#E53E3E',
   },
-  background: '#353535',
-  text: '#E3E3E3',
+  background: '#2D3748',
+  text: '#EDF2F7',
   time: 7500,
   position: 'bottom',
   close: false

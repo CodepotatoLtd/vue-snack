@@ -11,7 +11,7 @@ const postcss = require('postcss')
 const includepaths = require('rollup-plugin-includepaths')
 
 const options = {
-  name: 'VueSnackbarPluginTest',
+  name: 'VueTwackbarPluginTest',
   transpiler: 'babel',
 }
 

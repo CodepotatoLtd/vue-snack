@@ -1,31 +1,25 @@
-# Vue Snackbar
+# Vue Twackbar
 
-A Vue.JS plugin for creating and displaying [snackbars](https://material.io/design/components/snackbars.html) following the material design policies created by Google.
+A Vue.JS plugin for creating and displaying [snackbars](https://material.io/design/components/snackbars.html) styled using [TailwindCSS](https://tailwindcss.com).
+
+Heavily inspired by [zerodois/vue-snack](https://github.com/zerodois/vue-snack) (Thank you!)
 
 # Install
 
 Install from npm:
 ```console
-npm install --save vue-snack
+npm install --save vue-twack
 ```
 ```javascript
 import Vue from 'vue'
-import VueSnackbar from 'vue-snack' 
+import VueTwack from 'vue-twack' 
+import 'vue-twack/dist/vue-twack.min.css'
 
-Vue.use(VueSnackbar, options = {})
-```
-Or from CDN:
-
-```html
-<head>
-  <link rel="stylesheet" href="https://unpkg.com/vue-snack/dist/vue-snack.min.css">  
-  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
-  <script src="https://unpkg.com/vue-snack/dist/vue-snack.min.js"></script>
-</head>
+Vue.use(VueTwack, options = { position: 'bottom-right', time: 3000 })
 ```
 
 # Use
-The plugin provides the `$snack` property in all components, this property contains all the methods configured to display the desired snackbar.
+The plugin provides the `$twack` property in all components, this property contains all the methods configured to display the desired snackbar.
 
 By default, the plugin contains three main display methods: `success`,` danger` and `show`. These methods present snackbars with preconfigured colors for success messages, error messages and standard messages, respectively. The text of the message in all cases have the same color, but the action button present in the snackbar varies in color depending on the method called.
 
@@ -34,9 +28,9 @@ Each method receives as a parameter a message string, or a configuration object.
 ```javascript
 /**** Using ****/
 
-vm.$snack.metodo('My Message') // Displays a snackbar without action button
+vm.$twack.metodo('My Message') // Displays a snackbar without action button
 
-vm.$snack.metodo(config) // Displays a snackbar according to the given object
+vm.$twack.metodo(config) // Displays a snackbar according to the given object
 
 ```
 
@@ -97,9 +91,9 @@ The following is what is needed to display snackbars for success, error, and def
 In plugin installation:
 ```javascript
 import Vue from 'vue'
-import VueSnackbar from 'vue-snack' 
+import VueTwackbar from 'vue-twack' 
 
-Vue.use(VueSnackbar, {
+Vue.use(VueTwackbar, {
   methods: {
     name: 'myMethod',
     color: 'hotpink'
@@ -111,28 +105,28 @@ Vue.use(VueSnackbar, {
 export default {
   methods: {
     ok () {
-      this.$snack.success({
+      this.$twack.success({
         text: 'Conversa arquivada',
         button: 'desfazer',
         action: this.clickAction
       })
     },
     notOk () {
-      this.$snack.danger({
+      this.$twack.danger({
         text: 'Erro ao salvar fotos',
         button: 'refazer',
         action: this.clickAction
       })
     },
     potato () {
-      this.$snack.show({
+      this.$twack.show({
         text: 'Usuário adicionado',
         button: 'desfazer',
         action: this.clickAction
       })
     },
     creamCheese () {
-      this.$snack.myMethod({
+      this.$twack.myMethod({
         text: 'Esse site utiliza cookies bauducco',
         button: 'Entendi'
       })
@@ -140,11 +134,3 @@ export default {
   }
 }
 ```
-
-Snackbars generated success, error, standard and customized, successively:
-![snackbars](https://raw.githubusercontent.com/zerodois/vue-snackbar/master/docs/img/defaults.png)
-
-Snackbar on phone screen:
-
-![snackbars](https://raw.githubusercontent.com/zerodois/vue-snackbar/master/docs/img/responsive.png "Snackbar on phone screen")
-

@@ -1,6 +1,8 @@
-# Vue Snackbar
+# Vue Twackbar
 
 A Vue.JS plugin for creating and displaying [snackbars](https://material.io/design/components/snackbars.html) styled using [TailwindCSS](https://tailwindcss.com).
+
+Heavily inspired by [zerodois/vue-snack](https://github.com/zerodois/vue-snack) (Thank you!)
 
 # Install
 
