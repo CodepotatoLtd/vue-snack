@@ -54,13 +54,15 @@
     props: {
       config: Object
     },
-    data: _ => ({
-      active: false,
-      text: '',
-      button: '',
-      theme: 'default',
-      action: null
-    }),
+    data() {
+      return {
+        active: false,
+        text: '',
+        button: '',
+        theme: 'default',
+        action: null
+      }
+    },
     computed: {
       styles() {
         return `--primary: ${this.config[this.theme].primary}`
